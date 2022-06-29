@@ -57,6 +57,7 @@ public class PostResource {
     public Response listPost(
             @PathParam("userId") Long userId,
             @HeaderParam("followerId") Long followerId) {
+
         User user = userRepository.findById(userId);
         if (user == null){
             return Response.status(Response.Status.NOT_FOUND).build();
